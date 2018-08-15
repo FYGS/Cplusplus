@@ -52,7 +52,7 @@ ostream& Flacon::etiquette (ostream& sortie) const {
 Flacon& Flacon::operator +=(const Flacon& f2) {
 	double pH_melange(-log10( ( get_volume() * pow( 10.0, -get_pH() ) + f2.get_volume() * pow( 10.0, -f2.get_pH() ) ) / ( get_volume() + f2.get_volume() )  )) ;
 	
-	set_nom(get_nom() " + " f2.get_nom());
+	set_nom(get_nom() + " + " + f2.get_nom());
 	set_volume(get_volume() + f2.get_volume());
 	set_pH(pH_melange);
 	
